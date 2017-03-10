@@ -28,7 +28,6 @@ gem "react-rails-img"
 gem "js-routes"
 gem "font-awesome-rails"
 gem "active_model_serializers", "~> 0.10.0"
-gem "mysql2", ">= 0.3.18", "< 0.5"
 
 group :development, :test do
   # Call "byebug" anywhere in the code to stop execution and get a debugger console
