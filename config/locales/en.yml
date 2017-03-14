@@ -32,4 +32,22 @@ en:
       back: "Back"
   layouts:
     application:
-      app_title: "CVmaker"
+      title: "CV Maker"
+    footer:
+      content: "Project idea by us"
+      news: "News"
+  static_pages:
+    contact:
+      title: "Contact"
+      content: "This is Contact page"
+    help:
+      title: "Help"
+      content: "This is Help page"
+    about:
+      title: "About"
+      content: "This is About page"
+    home:
+      wellcome: "Wellcome to the best web CV Maker"
+      content: "This is home page"
+      sign_up_now: "Sign up now!"
+
