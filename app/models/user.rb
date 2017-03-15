@@ -1,4 +1,7 @@
 class User < ApplicationRecord
+  devise :database_authenticatable, :registerable,
+    :recoverable, :rememberable, :trackable, :validatable
+
   has_many :certifications, dependent: :destroy
   has_many :educations, dependent: :destroy
   has_many :portfolios, dependent: :destroy

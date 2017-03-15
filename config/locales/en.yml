@@ -1,41 +1,91 @@
 en:
   users:
-    create:
-      notice_create_success: "User was successfully created."
-    update:
-      notice_update_success: "User was successfully updated."
-    destroy:
-      notice_destroy_success: "User was successfully destroyed."
-    form:
-      error: "error"
-      password_digest: "Password"
-      user_name: "User name"
-      first_name: "First name"
-      last_name: "Last name"
-      submit_btn: "Submit"
-    index:
-      title: "Users"
-      show: "Show"
-      edit: "Edit"
-      delete: "Destroy"
-      confirm_msg: "Are you sure?"
-      new_user: "New User"
-    new:
-      back: "Back"
-      title: "New User"
-    edit:
-      show: "Show"
-      back: "Back"
-      title: "Editing User"
-    show:
-      edit: "Edit"
-      back: "Back"
+    confirmations:
+      new:
+        title: "Resend confirmation instructions"
+        submit: "Resend confirmation instructions"
+    mailer:
+      confirmation_instructions:
+        welcome: "Welcome"
+        detail_1: "You can confirm your account email through the link below:"
+        confirm_account: "Confirm my account"
+      password_change:
+        hello: "Hello "
+        details: "We're contacting you to notify you that
+          your password has been changed."
+      reset_password_instructions:
+        hello: "Hello "
+        detail_1: "Someone has requested a link to change your password.
+          You can do this through the link below."
+        change_passowrd: "Change my password"
+        detail_2: |+
+          If you didn't request this, please ignore this email.
+          Your password won't change until you access the link above and
+          create a new one.
+      unlock_instructions:
+        hello: "Hello "
+        details: |+
+          Your account has been locked due to an excessive
+          number of unsuccessful sign in attempts.
+          Click the link below to unlock your account:
+        unlock_account: "Unlock my account"
+    passwords:
+      edit:
+        title: "Change your password"
+        submit: "Change my password"
+        new_pwd: "New password"
+        pwd_confirm: "Confirm new password"
+      new:
+        title: "Forgot your password?"
+        submit: "Send me reset password instructions"
+        sign_up: "Sign up new account"
+    registrations:
+      new:
+        title: "Sign up"
+        pwd_minimum: " characters minimum thanh"
+        submit: "Sign up"
+        login: "Login if have account"
+      edit:
+        title: "Edit User"
+        submit: Update
+        pwd_minimum: " characters minimum"
+        cancel_account: "Cancel my account"
+        confirm_msg: "Are you sure?"
+        new_pwd: "New password"
+    sessions:
+      new:
+        title: "Login"
+        submit: "Login"
+        sign_up: "Sign up"
+        forgot_pwd: "Forgot your passowrd?"
+    shared:
+      links:
+        login: "Log in"
+        sign_up: "Sign up"
+        forgot_pwd: "Forgot your password?"
+        dont_receive_confirm: "Didn't receive confirmation instructions?"
+        dont_receive_unlock: "Didn't receive unlock instructions?"
+        authenticated: "Sign in with %{user}"
+        sessions: "sessions"
+        registrations: "registrations"
+        passwords: "passwords"
+        confirmations: "confirmations"
+        unlocks: "unlocks"
+    unlocks:
+      new:
+        title: "Resend unlock instructions"
+        submit: "Resend unlock instructions"
   layouts:
     application:
       title: "CV Maker"
     footer:
       content: "Project idea by us"
       news: "News"
+    header:
+      edit_profile: "Edit profile"
+      logout: "Logout"
+      login: "Login"
+      sign_up: "Sing up"
   static_pages:
     contact:
       title: "Contact"
@@ -47,7 +97,7 @@ en:
       title: "About"
       content: "This is About page"
     home:
-      wellcome: "Wellcome to the best web CV Maker"
+      welcome: "Welcome to the best web CV Maker"
       content: "This is home page"
       sign_up_now: "Sign up now!"
 
