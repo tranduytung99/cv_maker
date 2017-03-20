@@ -8,7 +8,8 @@ class CreateUsers < ActiveRecord::Migration[5.1]
       t.string :address
       t.text :objective
       t.string :major
-      t.boolean :admin
+      t.integer :role, null: false, default: 1
+      t.string :avatar
 
       t.string :email, null: false, default: ""
       t.string :encrypted_password, null: false, default: ""
