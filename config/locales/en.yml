@@ -101,3 +101,22 @@ en:
       content: "This is home page"
       sign_up_now: "Sign up now!"
 
+  admin: 
+    layouts:
+      admin:
+        title: "Admin page"
+    users: 
+      header: "Users"
+      index: 
+        title: "Manage users"
+        add_new: "Add new"
+      show: 
+        title: "User details"
+      new:
+        title: "New user"
+      edit:
+        title: "Edit users"
+    static_pages:
+      header: "Dashboard"
+      index:
+        title: "Dash board"

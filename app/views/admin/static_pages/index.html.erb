@@ -1,0 +1,10 @@
+<% provide :title, t(".title") %>
+<% content_for :breadcrumb do %>
+  <ol class="breadcrumb">
+    <li class="active">
+      <i class="fa fa-dashboard"></i>
+      <%= t ".dashboard" %>
+    </li>
+  </ol>
+<% end %>
+<%= react_component "Dashboard", count: @count %>
