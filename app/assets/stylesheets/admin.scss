@@ -1,0 +1,124 @@
+@import 'bootstrap-sprockets';
+@import 'bootstrap';
+@import 'font-awesome';
+@import 'config/settings';
+
+body {
+  margin-top: 100px;
+  background-color: $white-color;
+  @media (min-width: 768px) {
+    margin-top: 50px;
+  }
+}
+
+#wrapper {
+  padding-left: 0;
+  @media (min-width: 768px) {
+    padding-left: 225px;
+  }
+}
+
+.navbar-brand.admin-brand {
+  color: $white-color;
+  text-transform: uppercase;
+  font-weight: 900;
+}
+
+@mixin top_nav_li {
+  display: inline-block;
+  float: left;
+  >a {
+    &:hover, &:focus {
+      color: $white-color;
+      background-color: $black-color;
+    }
+  }
+}
+
+.top-nav {
+  padding: 0 15px;
+  >li {
+    @include top_nav_li;
+    >a {
+      padding-top: 15px;
+      padding-bottom: 15px;
+      line-height: 20px;
+      color: $grey-color;
+    }
+  }
+  .open {
+    @include top_nav_li;
+    >a {
+      color: $white-color;
+      background-color: $black-color;
+    }
+    >.dropdown-menu {
+      float: left;
+      margin-top: 0;
+      border: 1px solid rgba(0, 0, 0, .15);
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+      background-color: $white-color;
+      box-shadow: 0 6px 12px rgba(0,0,0,.175);
+      -webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175);
+    }
+  }
+}
+
+ul.alert-dropdown {
+  width: 200px;
+}
+
+
+.side-nav {
+  @media (min-width: 768px) {
+    position: fixed;
+    top: 51px;
+    left: 225px;
+    width: 225px;
+    margin-left: -225px;
+    border: none;
+    border-radius: 0;
+    overflow-y: auto;
+    background-color: $mine-shaft-color;
+    bottom: 0;
+    overflow-x: hidden;
+    padding-bottom: 40px;
+    >li>a {
+      width: 225px;
+    }
+  }
+}
+
+#page-wrapper {
+  width: 100%;
+  padding: 0;
+  background-color: $white-color;
+  @media (min-width: 768px) {
+    padding: 10px;
+  }
+}
+
+@mixin panel_color($color, $bold-color, $inverse-color: $white-color) {
+  border-color: $color;
+  .panel-heading {
+    border-color: $color;
+    color: $inverse-color;
+    background-color: $color;
+  }
+  a {
+    color: $color;
+    &:hover, &:focus {
+      color: $bold-color
+    }
+  }
+}
+
+.panel-black {
+  @include panel_color(#333, #000);
+}
+
+.huge {
+  font-size: 40px;
+  line-height: normal;
+}
