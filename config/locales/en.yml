@@ -42,7 +42,7 @@ en:
     registrations:
       new:
         title: "Sign up"
-        pwd_minimum: " characters minimum thanh"
+        pwd_minimum: " characters minimum"
         submit: "Sign up"
         login: "Login if have account"
       edit:

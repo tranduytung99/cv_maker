@@ -92,3 +92,91 @@ footer {
     }
   }
 }
+
+.cv-main {
+  margin: 0px auto;
+  width: 210mm;
+  padding: 20mm;
+  background-color: white-color;
+
+  .form-info:hover {
+    border-width: 0.5px;
+    border-style: solid;
+    border-color: #999;
+    >.tool-box {
+      visibility: visible;
+    }
+  }
+
+  .form-info {
+    >.tool-box {
+      visibility: hidden;
+    }
+  }
+
+  [contenteditable=true]:empty:before {
+    content: attr(placeholder);
+    display: block;
+    color: #999;
+    text-align: left;
+  }
+
+  .contact-name {
+    margin-bottom: 10px;
+  }
+
+  .contact-title {
+    text-align: right;
+  }
+
+  .contact-content,
+  .form-info,
+  .contact-name {
+    text-align: left;
+  }
+
+  .form-title {
+    margin-top: 18px;
+
+    hr {
+      display: block;
+      margin-top: 4px;
+      margin-bottom: 4px;
+      margin-left: auto;
+      margin-right: auto;
+      border-style: inset;
+      border-color: black;
+    }
+  }
+
+  .subform:hover {
+    border-style: solid;
+    border-color: #999;
+    border-width: 1px;
+
+    [contenteditable=true] {
+      border-style: dashed;
+      border-width: 0.5px;
+      border-color: #999;
+    }
+
+    .tool-box {
+      margin-bottom: 5px;
+      margin-top: 5px;
+      float: right;
+      visibility: visible;
+    }
+  }
+
+  .subform {
+    .tool-box {
+      visibility: hidden;
+    }
+
+    .title-content {
+      .input-text {
+        margin-bottom: 4px;
+      }
+    }
+  }
+}
