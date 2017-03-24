@@ -1,0 +1,8 @@
+<% if session[:last_page] %>
+   <span class="pull-right">
+    <button class="btn btn-xs btn-default" onclick="location.href='<%= session[:last_page] %>'">
+      <i class="fa fa-chevron-left"></i>
+      <%= t ".back" %>
+    </button>
+  </span>
+<% end %>
