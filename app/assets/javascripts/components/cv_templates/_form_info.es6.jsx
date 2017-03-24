@@ -75,7 +75,7 @@ class FormInfo extends React.Component{
     return(
       <div className="form-info col-xs-12" >
         <ToolBox
-          className="tool-box"
+          className="tool-box btn-group"
           upClick={this._upClickForm}
           downClick={this._downClickForm}
           addClick={this._addForm}

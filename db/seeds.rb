@@ -1,7 +1,32 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+CatalogueForm.create name: "Objective", hint_title: "", hint_content: "Your objective"
+CatalogueForm.create name: "Education", hint_title: "University", hint_time: "From - To",
+  hint_content: "- Degree and Field of study - gpa"
+CatalogueForm.create name: "Work experience", hint_title: "Company name",
+  hint_time: "From - To",
+  hint_content: "- Title / Position \
+  - Description about your responsibilities and the results of your work"
+CatalogueForm.create name: "Activities", hint_title: "Organization name",
+  hint_time: "From - To",
+  hint_content: "- Title \
+  - Description"
+CatalogueForm.create name: "Skills", hint_title: "Skill name",
+  hint_content: "Skill description"
+CatalogueForm.create name: "Interests", hint_title: "",
+  hint_content: "I like soccer, music, etc ..."
+CatalogueForm.create name: "Certifications", hint_title: "Certification, ...", hint_time: "From - To",
+  hint_content: "Certificate name"
+CatalogueForm.create name: "Honors & Awards", hint_time: "From - To",
+  hint_title: "Award, ...", hint_content: "Award name"
+CatalogueForm.create name: "Projects", hint_title: "Project name",
+  hint_time: "From - To",
+  hint_content: "- Work description \
+  - Team work\
+  - Your position in team"
+CatalogueForm.create name: "References", hint_title: "", hint_content: ""
+
+Template.create name: "Template 1"
+Template.create name: "Template 2"
+
+User.create first_name: "Nguyen", last_name: "Thanh", date_of_birth: "13/3/2003",
+  phone_number: "0123498372", sex: "male", email: "thanh@framgia.com",
+  encrypted_password: "000000"

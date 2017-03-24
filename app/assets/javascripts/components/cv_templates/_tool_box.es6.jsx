@@ -26,14 +26,22 @@ class ToolBox extends React.Component{
 
     return(
       <div className={this.props.className ? this.props.className : ""}>
-        <button className="btn-default"
-          onClick={this._upClick}> &#8607; </button>
-        <button className="btn-default"
-          onClick={this._downClick}> &#8609; </button>
-        <button className="btn-success"
-          onClick={this._addClick}> + </button>
-        <button className="btn-danger"
-          onClick={this._deleteClick}> &times; </button>
+        <button className="btn btn-sm btn-default"
+          onClick={this._upClick}>
+          <i className="fa fa-angle-double-up"></i>
+        </button>
+        <button className="btn btn-sm btn-default"
+          onClick={this._downClick}>
+          <i className="fa fa-angle-double-down"></i>
+        </button>
+        <button className="btn btn-sm btn-success"
+          onClick={this._addClick}>
+          <i className="fa fa-plus"></i>
+        </button>
+        <button className="btn btn-sm btn-danger"
+          onClick={this._deleteClick}>
+          <i className="fa fa-times"></i>
+        </button>
       </div>
     )
   }
