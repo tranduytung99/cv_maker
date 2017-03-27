@@ -10,4 +10,10 @@ Rails.application.routes.draw do
     get "/login", to: "sessions#new"
     resources :users
   end
+
+  namespace :api do
+    resources :templates
+    resources :users
+    resources :catalogue_forms
+  end
 end

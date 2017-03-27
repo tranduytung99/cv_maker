@@ -40,113 +40,75 @@ class SubForm extends React.Component{
   }
 
   render(){
-    let {time, title, content_placeholder, time_content, title_content, content} = this.props.subform
+    let {time, title, content_placeholder, time_content, title_content, content,
+      time_placeholder, title_placeholder} = this.props.subform
+
     let _subform = null
+
+    let time_input = <TextInput
+      content={time_content || ""}
+      placeholder={time_placeholder}
+      whichDetail={"time_content"}
+      changeParentData={this._changeParentDataTime}
+      />
+    let title_input = <TextInput
+      content={title_content || ""}
+      placeholder={title_placeholder}
+      whichDetail={"title_content"}
+      changeParentData={this._changeParentDataTitle}
+      />
+    let content_input = <TextInput
+      content={content || ""}
+      whichDetail={"content"}
+      placeholder={content_placeholder || "Content"}
+      changeParentData={this._changeParentData}
+      />
+    let tool_box = <ToolBox
+      key={"content_3"}
+      className="tool-box btn-group"
+      addClick={this._addSubForm}
+      deleteClick={this._deleteSubForm}
+      upClick={this._upClick}
+      downClick={this._downClick}
+      />
 
     if (time && title) {
       _subform = [
         <div className="col-xs-3" key={"content_1"}>
-          <TextInput
-            content={time_content || ""}
-            placeholder="From - To"
-            whichDetail={"time_content"}
-            changeParentData={this._changeParentDataTime} />
+          {time_input}
         </div>,
         <div className="col-xs-9 title-content" key={"content_2"}>
-          <TextInput
-            content={title_content || ""}
-            placeholder="Title"
-            whichDetail={"title_content"}
-            changeParentData={this._changeParentDataTitle}
-            />
-          <TextInput
-            content={content || ""}
-            whichDetail={"content"}
-            placeholder={content_placeholder || "Content"}
-            changeParentData={this._changeParentData}
-            />
+          {title_input}
+          {content_input}
         </div>,
-        <ToolBox
-          key={"content_3"}
-          className="tool-box"
-          addClick={this._addSubForm}
-          deleteClick={this._deleteSubForm}
-          upClick={this._upClick}
-          downClick={this._downClick}
-        />
+        tool_box
       ]
     } else if (time) {
       _subform = [
         <div className="col-xs-3" key={"content_1"}>
-          <TextInput
-            content={time_content || ""}
-            placeholder="From - To"
-            whichDetail={"time_content"}
-            changeParentData={this._changeParentDataTime}
-            />
+          {time_input}
         </div>,
         <div className="col-xs-9 title-content" key={"content_2"}>
-          <TextInput
-            content={content || ""}
-            whichDetail={"content"}
-            placeholder={content_placeholder || "Content"}
-            changeParentData={this._changeParentData}
-            />
+          {content_input}
         </div>,
-        <ToolBox
-          key={"content_3"}
-          className="tool-box"
-          addClick={this._addSubForm}
-          deleteClick={this._deleteSubForm}
-          upClick={this._upClick}
-          downClick={this._downClick}
-        />
+        tool_box
       ]
     } else if (title) {
       _subform = [
         <div className="col-xs-3" key={"content_1"}>
-          <TextInput
-            content={title_content || ""}
-            placeholder="Title"
-            whichDetail={"title_content"}
-            changeParentData={this._changeParentDataTitle}
-            />
+          {title_input}
         </div>,
         <div className="col-xs-9" key={"content_2"}>
-          <TextInput
-            content={content || ""}
-            whichDetail={"content"}
-            placeholder={content_placeholder || "Content"}
-            changeParentData={this._changeParentData}
-            />
+          {content_input}
         </div>,
-        <ToolBox
-          key={"content_3"}
-          className="tool-box"
-          addClick={this._addSubForm}
-          deleteClick={this._deleteSubForm}
-          upClick={this._upClick}
-          downClick={this._downClick}
-        />
+        tool_box
       ]
     } else {
       _subform = [
         <div className="col-xs-12" key={"content_1"}>
-          <TextInput
-            content={content || ""}
-            whichDetail={"content"}
-            placeholder={content_placeholder || "Content"}
-            changeParentData={this._changeParentData}
-            />
+          {content_input}
         </div>,
-        <ToolBox
-          key={"content_2"}
-          className="tool-box"
-          addClick={this._addSubForm}
-          deleteClick={this._deleteSubForm}
-          upClick={this._upClick}
-          downClick={this._downClick}
-        />
+        tool_box
       ]
     }
 

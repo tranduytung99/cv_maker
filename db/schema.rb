@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(version: 20170320031430) do
     t.string "icon"
     t.string "hint_title"
     t.string "hint_content"
+    t.string "hint_time"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -74,10 +75,11 @@ ActiveRecord::Schema.define(version: 20170320031430) do
     t.date "date_of_birth"
     t.string "phone_number"
     t.string "address"
-    t.text "objective"
     t.string "major"
     t.integer "role", default: 1, null: false
     t.string "avatar"
+    t.string "website"
+    t.string "sex"
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"

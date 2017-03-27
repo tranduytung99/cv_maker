@@ -6,10 +6,11 @@ class CreateUsers < ActiveRecord::Migration[5.1]
       t.date :date_of_birth
       t.string :phone_number
       t.string :address
-      t.text :objective
       t.string :major
       t.integer :role, null: false, default: 1
       t.string :avatar
+      t.string :website
+      t.string :sex
 
       t.string :email, null: false, default: ""
       t.string :encrypted_password, null: false, default: ""
