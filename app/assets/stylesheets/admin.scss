@@ -115,10 +115,55 @@ ul.alert-dropdown {
 }
 
 .panel-black {
-  @include panel_color(#333, #000);
+  @include panel_color($inverse-color, $black-color);
 }
 
 .huge {
   font-size: 40px;
   line-height: normal;
+}
+
+.form-group div {
+  padding-right: 0px;
+  &:last-of-type {
+    padding-right: 15px;
+  }
+}
+
+.btn-default.btn-inverse {
+  color: $white-color;
+  background-color: $inverse-color;
+  border-color: $white-color;
+}
+
+.form-group.required .control-label:after {
+  content: '*';
+  color: red;
+}
+
+img#user-avatar {
+  width: 100px;
+  height: 100px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  border: 5px solid rgba(0,0,30,0.8);
+}
+
+.no-top-margin {
+  margin-top: 0;
+}
+
+.text-muted.role {
+  vertical-align: text-top;
+}
+
+.text-center {
+  .modal {
+    text-align: left;
+  }
+}
+
+.help-block.with-errors {
+  color: red;
 }

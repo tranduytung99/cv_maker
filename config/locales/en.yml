@@ -106,6 +106,7 @@ en:
       admin:
         title: "Admin page"
     users: 
+      notfound: "User not found"
       header: "Users"
       index: 
         title: "Manage users"

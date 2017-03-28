@@ -1,0 +1,15 @@
+<% provide :title, t(".title") %>
+<% content_for :breadcrumb do %>
+  <ol class="breadcrumb">
+    <li>
+      <i class="fa fa-users"></i>
+      <%= link_to t(".user"), admin_users_path %>
+    </li>
+    <li class="active">
+      <i class="fa fa-plus-square"></i>
+      <%= t ".add" %>
+    </li>
+    <%= render "back" %>
+  </ol>
+<% end %>
+<%= react_component "AdminNewUser", roles: @roles %>
