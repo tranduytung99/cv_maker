@@ -50,6 +50,8 @@ class EditCV extends React.Component{
       <CVTemplate
         contactInfo={this.state.contact_info}
         catalogueForms={this.state.catalogue_forms}
+        userId={this.props.userId}
+        template={this.props.template}
       />
     ) : null
 

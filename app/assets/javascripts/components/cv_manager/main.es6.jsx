@@ -32,7 +32,7 @@ class CvManagerMain extends React.Component{
           <div
             key={index}
             className="btn-link"
-            onClick={this._onClick.bind(this, index)}
+            onClick={this._onClick.bind(this, template.id)}
             >
             {template.name}
           </div>
@@ -46,8 +46,10 @@ class CvManagerMain extends React.Component{
         template={this.state.which_cv}
         userId={this.props.userId}
         backToChooseCv={this._setStateChooseCv}
+        template={this.state.which_cv}
       />
     }
+
     return (
       <div>
         {page}
