@@ -24,9 +24,10 @@ CatalogueForm.create name: "Projects", hint_title: "Project name",
   - Your position in team"
 CatalogueForm.create name: "References", hint_title: "", hint_content: ""
 
-Template.create name: "Template 1"
-Template.create name: "Template 2"
+Template.create name: "Template 1", content: "template1"
+Template.create name: "Template 2", content: "template2"
 
+User.create first_name: "vinh", email: "vinh@gmail.com", password: 123456
 User.create first_name: "Nguyen", last_name: "Thanh", date_of_birth: "13/3/2003",
   phone_number: "0123498372", sex: "male", email: "thanh@framgia.com",
   password: "000000", password_confirmation: "000000"

@@ -49,7 +49,7 @@ class CvManagerMain extends React.Component{
         template={this.state.which_cv}
         userId={this.props.userId}
         backToChooseCv={this._setStateChooseCv}
-        template={this.state.which_cv}
+        downloadPDFPath={this.props.downloadPDFPath}
       />
     }
 

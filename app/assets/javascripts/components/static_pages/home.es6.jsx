@@ -30,6 +30,7 @@ class Home extends React.Component{
       <CvManagerMain
         templates={this.state.templates}
         userId={this.props.userId}
+        downloadPDFPath={this.props.downloadPDFPath}
       />
     )
   }
