@@ -123,17 +123,29 @@ ul.alert-dropdown {
   line-height: normal;
 }
 
-.form-group div {
+.form-horizontal .form-group div {
   padding-right: 0px;
   &:last-of-type {
     padding-right: 15px;
   }
 }
 
-.btn-default.btn-inverse {
+@mixin inverse_item {
   color: $white-color;
   background-color: $inverse-color;
   border-color: $white-color;
+}
+
+.btn-default.btn-inverse {
+  @include inverse_item;
+  &:hover, &:focus {
+    background-color: $black-color;
+    color: $white-color;
+  }
+}
+
+.input-group-addon.addon-inverse {
+  @include inverse_item;
 }
 
 .form-group.required .control-label:after {
@@ -166,4 +178,8 @@ img#user-avatar {
 
 .help-block.with-errors {
   color: red;
+}
+
+.full-width {
+  width: 100%;
 }

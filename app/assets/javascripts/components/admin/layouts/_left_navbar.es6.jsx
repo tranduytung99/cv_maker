@@ -12,8 +12,7 @@ class LeftNavbar extends React.Component {
         const active = area == link.area ? "active" : ""
         result.push(<li  key={link.area} className={active}>
           <a href={"/admin/" + link.href}>
-            <i className={"fa fa-" + link.fa}></i>
-            {link.html}
+            <i className={"fa fa-" + link.fa}></i> {link.html}
           </a>
         </li>)
       }) 
