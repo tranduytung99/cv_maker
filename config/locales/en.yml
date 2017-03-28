@@ -101,7 +101,10 @@ en:
       content: "This is home page"
       sign_up_now: "Sign up now!"
 
-  admin: 
+  admin:
+    sessions:
+      new:
+        title: "Admin login"
     layouts:
       admin:
         title: "Admin page"
