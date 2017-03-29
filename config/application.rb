@@ -10,5 +10,6 @@ module CvMaker
       DeviseController.respond_to :html
     end
     config.assets.precompile += ["admin.scss", "admin.js"]
+    config.middleware.use PDFKit::Middleware
   end
 end

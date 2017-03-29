@@ -86,6 +86,8 @@ en:
       logout: "Logout"
       login: "Login"
       sign_up: "Sing up"
+    cv_pdf:
+      title: "Download template"
   static_pages:
     contact:
       title: "Contact"
@@ -108,13 +110,13 @@ en:
     layouts:
       admin:
         title: "Admin page"
-    users: 
+    users:
       notfound: "User not found"
       header: "Users"
-      index: 
+      index:
         title: "Manage users"
         add_new: "Add new"
-      show: 
+      show:
         title: "User details"
       new:
         title: "New user"

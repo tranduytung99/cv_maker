@@ -14,6 +14,9 @@ gem "uglifier", ">= 1.3.0"
 
 # Use jquery as the JavaScript library
 gem "jquery-rails"
+gem "pdfkit"
+gem "render_anywhere"
+gem "wkhtmltopdf-binary"
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 3.0"
 # Use ActiveModel has_secure_password

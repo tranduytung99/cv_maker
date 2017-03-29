@@ -4,7 +4,11 @@ Rails.application.routes.draw do
   get "/help", to: "static_pages#help"
   get "/contact", to: "static_pages#contact"
   get "/about", to: "static_pages#about"
-  resources :users
+
+  resources :users do
+    resource :download, only: [:show]
+  end
+
   namespace :admin do
     root "static_pages#index"
     get "/login", to: "sessions#new"

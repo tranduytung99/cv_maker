@@ -52,15 +52,18 @@ class EditCV extends React.Component{
         catalogueForms={this.state.catalogue_forms}
         userId={this.props.userId}
         template={this.props.template}
-      />
+        downloadPDFPath={this.props.downloadPDFPath}
+      >
+       <button
+          className="btn btn-default"
+          onClick={this._onBack}
+          > Back </button>
+
+      </CVTemplate>
     ) : null
 
     return(
       <div>
-        <button
-          className="btn btn-success"
-          onClick={this._onBack}
-          > Back </button>
         {cvTemplate}
       </div>
     )

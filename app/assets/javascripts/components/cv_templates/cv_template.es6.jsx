@@ -285,16 +285,22 @@ class CVTemplate extends React.Component{
     }
 
     return(
-      <div className="row cv-main">
-        <ContactInfo
-          changeParentData={this._changeParentData}
-          contactInfo={this.state.contact_info}
-          fullName={this.state.full_name}
-          whichTitle={"contact_info"}
-          />
-        <div>{form_infos}</div>
-        <div><button className="btn btn-success" onClick={this._saveCV}> Save CV </button></div>
+      <div>
+        {this.props.children}
+        <div className="pull-right">
+        <a href={this.props.downloadPDFPath + "?template_id=" +this.props.template} className="btn btn-primary"> Download PDF </a>
+        <button className="btn btn-success" onClick={this._saveCV}> Save CV </button>
+        </div>
+        <div className="row cv-main">
+          <ContactInfo
+            changeParentData={this._changeParentData}
+            contactInfo={this.state.contact_info}
+            fullName={this.state.full_name}
+            whichTitle={"contact_info"}
+            />
+          <div>{form_infos}</div>
 
+        </div>
       </div>
     )
   }

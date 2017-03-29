@@ -1,1 +1,2 @@
-<%= react_component "Home", userId: current_user.id %>
+<%= react_component "Home", userId: current_user.id,
+  downloadPDFPath: user_download_path(@user, format: "pdf") %>
