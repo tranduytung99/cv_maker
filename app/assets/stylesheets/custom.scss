@@ -178,3 +178,21 @@ footer {
     }
   }
 }
+
+.template-div {
+  margin-left: 40px;
+  margin-right: 40px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  >.row {
+    margin-left: 0; 
+    margin-right: 0;
+    width: 100%;
+    >img{
+      height: 300px;
+    }
+  }
+  &:hover, &:focus {
+    opacity: 0.7;
+  }
+}

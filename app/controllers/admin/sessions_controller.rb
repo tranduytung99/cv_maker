@@ -7,7 +7,7 @@ class Admin::SessionsController < Admin::BaseController
 
   def create
     @user = User.find_by email: params[:user][:email]
-    if @user.valid_password?(params[:user][:password]) 
+    if @user && @user.valid_password?(params[:user][:password]) 
       if @user.admin?
         sign_in @user
         render :js => "window.location = '/admin'"

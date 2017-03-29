@@ -29,4 +29,6 @@ Template.create name: "Template 2"
 
 User.create first_name: "Nguyen", last_name: "Thanh", date_of_birth: "13/3/2003",
   phone_number: "0123498372", sex: "male", email: "thanh@framgia.com",
-  encrypted_password: "000000"
+  password: "000000", password_confirmation: "000000"
+User.create email: "admin@cv.framgia.vn", first_name: "Admin", last_name: "Nguyen",
+  phone_number: "0987654321", password: "admin0", password_confirmation: "admin0", role: "admin"
