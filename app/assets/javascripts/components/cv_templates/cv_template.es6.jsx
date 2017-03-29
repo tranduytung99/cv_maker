@@ -19,7 +19,6 @@ class CVTemplate extends React.Component{
 
 
     this._changeParentData = this._changeParentData.bind(this)
-    this._onSubmitClick = this._onSubmitClick.bind(this)
 
     this._addSubForm = this._addSubForm.bind(this)
     this._deleteSubForm = this._deleteSubForm.bind(this)
@@ -32,6 +31,8 @@ class CVTemplate extends React.Component{
     this._downClickForm = this._downClickForm.bind(this)
 
     this._changeCatalogueIntoForm = this._changeCatalogueIntoForm.bind(this)
+    this._changeFormInfoIntoJsonData = this._changeFormInfoIntoJsonData.bind(this)
+    this._saveCV = this._saveCV.bind(this)
   }
 
   _changeCatalogueIntoForm() {
@@ -40,6 +41,7 @@ class CVTemplate extends React.Component{
     this.props.catalogueForms.map((catalogue, index) => {
       let obj = {
         form_title: catalogue.name, img: catalogue.icon,
+        catalogue_form_id: catalogue.id,
         subforms: [
           {
             time: catalogue.hint_time != null && catalogue.hint_time != "",
@@ -206,12 +208,53 @@ class CVTemplate extends React.Component{
     this.setState({form_infos: forms})
   }
 
-  _onSubmitClick() {
-    // console.log(this.state)
-  }
-
   componentDidMount() {
     this._changeCatalogueIntoForm()
+  }
+
+  _changeFormInfoIntoJsonData(){
+    let dataJson = [].slice()
+    this.state.form_infos.map((form_info, index) => {
+      let form = {
+        position: index,
+        form_title: form_info.form_title,
+        img: form_info.img,
+        catalogue_form_id: form_info.catalogue_form_id
+      }
+      let subforms = [].slice()
+      form_info.subforms.map((subform) => {
+        let sub_temp = {
+          title: subform.title ? subform.title_content : null,
+          time: subform.time ? subform.time_content : null,
+          content: subform.content
+        }
+        subforms.push(sub_temp)
+      })
+      form.subforms = subforms
+
+      dataJson.push(form)
+    })
+    return dataJson
+  }
+
+  _saveCV(){
+    let cv_template = this.props.template
+    let form_infos = JSON.stringify(this._changeFormInfoIntoJsonData())
+
+    $.ajax({
+      url: "/api/users/" + this.props.userId + "/curriculum_vitaes",
+      method: "POST",
+      dataType: "json",
+      data: {
+        cv_template: cv_template,
+        form_infos: form_infos
+      },
+      success: (data) => {
+      },
+      error: (xhr, status, err) => {
+        alert("Error: " + err)
+      }
+    })
   }
 
   render(){
@@ -249,7 +292,9 @@ class CVTemplate extends React.Component{
           fullName={this.state.full_name}
           whichTitle={"contact_info"}
           />
-        {form_infos}
+        <div>{form_infos}</div>
+        <div><button className="btn btn-success" onClick={this._saveCV}> Save CV </button></div>
+
       </div>
     )
   }

@@ -14,8 +14,10 @@ Rails.application.routes.draw do
   end
 
   namespace :api do
-    resources :templates
-    resources :users
+    resources :templates, only: :index
+    resources :users do
+      resources :curriculum_vitaes, only: :create
+    end
     resources :catalogue_forms
   end
 end
