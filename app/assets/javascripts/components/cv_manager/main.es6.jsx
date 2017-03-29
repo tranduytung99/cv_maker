@@ -31,14 +31,17 @@ class CvManagerMain extends React.Component{
         return(
           <div
             key={index}
-            className="btn-link"
-            onClick={this._onClick.bind(this, template.id)}
-            >
-            {template.name}
+            className="btn btn-link col-md-4"
+            onClick={this._onClick.bind(this, template.id)}>
+            <div className="template-div text-center">
+              <div className="row"><img src="template.png"/></div>
+              <div className="row">{template.name}</div>
+            </div>
           </div>
         )
       })
       page = <div className="row">
+        <h1>Choose a CV Template</h1>
         {listTemplates}
       </div>
     } else if(this.state.which_page == "edit-cv") {

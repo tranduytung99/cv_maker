@@ -133,7 +133,7 @@ ul.alert-dropdown {
 @mixin inverse_item {
   color: $white-color;
   background-color: $inverse-color;
-  border-color: $white-color;
+  border-color: $inverse-color;
 }
 
 .btn-default.btn-inverse {
