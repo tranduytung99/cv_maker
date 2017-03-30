@@ -5,7 +5,7 @@ class CVTemplate extends React.Component{
 
     let contactInfo = this.props.contactInfo
     this.state = {
-      full_name: contactInfo.first_name + " " + contactInfo.conlast_name,
+      full_name: contactInfo.last_name + " " + contactInfo.first_name,
       contact_info: [
         {title: "Date of birth", placeholder: "Date of birth (not required)", content: contactInfo.date_of_birth},
         {title: "Gender", placeholder: "Gender (not required)", content: contactInfo.sex},
@@ -250,6 +250,7 @@ class CVTemplate extends React.Component{
         form_infos: form_infos
       },
       success: (data) => {
+        window.location = this.props.downloadPDFPath + "?cv_id=" +data.id
       },
       error: (xhr, status, err) => {
         alert("Error: " + err)
@@ -283,13 +284,11 @@ class CVTemplate extends React.Component{
           />
         )})
     }
-
     return(
       <div>
         {this.props.children}
         <div className="pull-right">
-        <a href={this.props.downloadPDFPath + "?template_id=" +this.props.template} className="btn btn-primary"> Download PDF </a>
-        <button className="btn btn-success" onClick={this._saveCV}> Save CV </button>
+          <button className="btn btn-success" onClick={this._saveCV}> Save CV </button>
         </div>
         <div className="row cv-main">
           <ContactInfo
