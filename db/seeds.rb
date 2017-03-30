@@ -27,7 +27,7 @@ CatalogueForm.create name: "References", hint_title: "", hint_content: ""
 Template.create name: "Template 1", content: "template1"
 Template.create name: "Template 2", content: "template2"
 
-User.create first_name: "vinh", email: "vinh@gmail.com", password: 123456
+User.create(first_name: "Vinh", last_name: "Nguyen Quang", date_of_birth: "22/10/1994", sex: "male", phone_number: "0978135401", email: "vinh@framgia.com", address: "Hoang Quoc Viet", website: "vinh.fb.com", password: "123456")
 User.create first_name: "Nguyen", last_name: "Thanh", date_of_birth: "13/3/2003",
   phone_number: "0123498372", sex: "male", email: "thanh@framgia.com",
   password: "000000", password_confirmation: "000000"

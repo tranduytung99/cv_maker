@@ -14,7 +14,7 @@ class CvManagerService
             form["subforms"].each do |subform|
               subform_db = form_db.sub_forms.create title: subform["title"],
                 time: subform["time"], content: subform["content"]
-              raise ActiveRecord::Rollback
+              # raise ActiveRecord::Rollback
             end
           end
         end
@@ -22,9 +22,9 @@ class CvManagerService
     end
 
     if curriculum_vitae.save
-      true
+      curriculum_vitae
     else
-      false
+      nil
     end
   end
 end

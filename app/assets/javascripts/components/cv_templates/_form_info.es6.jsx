@@ -91,8 +91,8 @@ class FormInfo extends React.Component{
             changeParentData={this._changeParentData}
             />
           <hr />
-          {listSubforms}
         </div>
+        {listSubforms}
       </div>
     )
   }

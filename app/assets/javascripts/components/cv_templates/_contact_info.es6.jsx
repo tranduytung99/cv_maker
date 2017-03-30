@@ -19,12 +19,9 @@ class ContactInfo extends React.Component{
             <span>{contact.title}</span>
           </div>
           <div className="col-xs-9 contact-content">
-            <TextInput
-              changeParentData={this._changeParentData}
-              content={contact.content}
-              placeholder={contact.placeholder}
-              whichForm={index}
-              />
+            <div>
+              {contact.content}
+            </div>
           </div>
         </div>
       )
@@ -34,12 +31,9 @@ class ContactInfo extends React.Component{
       <div className="contact-info">
         <div className="col-xs-9">
           <div className="col-xs-12 contact-name">
-            <TextInput
-              content={this.props.full_name}
-              placeholder="Full name"
-              changeParentData={this._changeParentData}
-              whichForm={"full_name"}
-              fontSize="24pt"/>
+            <div>
+              {this.props.fullName}
+            </div>
           </div>
 
           {rows}

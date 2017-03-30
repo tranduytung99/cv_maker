@@ -25,6 +25,7 @@ class TextInput extends React.Component{
         onChange={this._onChange}
         placeholder={this.props.placeholder}
         fontSize={this.props.fontSize}
+        className={this.props.className ? this.props.className : ""}
       />
     )
   }

@@ -55,6 +55,7 @@ class SubForm extends React.Component{
       content={title_content || ""}
       placeholder={title_placeholder}
       whichDetail={"title_content"}
+      className={"title"}
       changeParentData={this._changeParentDataTitle}
       />
     let content_input = <TextInput
