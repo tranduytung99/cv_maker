@@ -24,7 +24,7 @@ gem "wkhtmltopdf-binary"
 
 # Use Capistrano for deployment
 # gem "capistrano-rails", group: :development
-gem "nokogiri", "~> 1.6.8"
+gem "nokogiri", ">= 1.7.1"
 gem "bootstrap-sass"
 gem "react-rails"
 gem "react-rails-img"

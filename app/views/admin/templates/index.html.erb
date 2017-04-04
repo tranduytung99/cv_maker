@@ -1,0 +1,16 @@
+<% provide :title, t(".title") %>
+<% content_for :breadcrumb do %>
+  <ol class="breadcrumb">
+    <li class="active">
+      <i class="fa fa-files-o"></i>
+      <%= t ".templates" %>
+    </li>
+    <span class="pull-right">
+      <button class="btn btn-xs btn-default" onclick="location.href='<%= new_admin_template_path %>'">
+        <i class="fa fa-plus"></i>
+        <%= t ".add_new" %>
+      </button>
+    </span>
+  </ol>
+<% end %>
+<%= react_component "AdminTempatesIndex", users: @templates %>

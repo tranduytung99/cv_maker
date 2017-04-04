@@ -10,7 +10,7 @@ test:
     command: brakeman -o .framgia-ci-reports/brakeman.html -o .framgia-ci-reports/brakeman.json
     ignore: true
   reek:
-    command: reek --format html > .framgia-ci-reports/reek.html
+    command: reek --format html -c config.reek > .framgia-ci-reports/reek.html
     ignore: true
   rubocop:
     command: bundle exec rubocop --require rubocop/formatter/checkstyle_formatter --format RuboCop::Formatter::CheckstyleFormatter --no-color --rails --out .framgia-ci-reports/rubocop.xml app/ lib/

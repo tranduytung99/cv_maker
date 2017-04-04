@@ -5,7 +5,8 @@ class LeftNavbar extends React.Component {
     const nav_lists = (() => {
       const links = [
         { area: "index", href: "", fa: "dashboard", html: "Dashboard" },
-        { area: "users", href: "users", fa: "users", html: "Users" }
+        { area: "users", href: "users", fa: "users", html: "Users" },
+        { area: "templates", href: "templates", fa: "files-o", html: "Templates" }
       ]
       let result = []
       links.map((link) => {

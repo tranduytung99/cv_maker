@@ -5,17 +5,17 @@ class AdminShowUser extends React.Component {
     return <div className="col-md-8">
       <div className="row">
         <div className="col-md-6 text-center">
-          <img id="user-avatar" src="https://image.flaticon.com/icons/png/128/25/25634.png" />
+          <img className="user-avatar" src="https://image.flaticon.com/icons/png/128/25/25634.png" />
           <br />
           <br />
           <a href={"/admin/users/" + user.id + "/edit"} className="btn btn-default">
             <i className="fa fa-pencil"></i> Edit
-          </a> 
+          </a>
           <button type="button" className="btn btn-default" data-toggle="modal" data-target="#confirm-delete-user">
             <i className="fa fa-trash"></i> Delete
           </button>
-          <DeleteConfirmModal 
-            link={"/admin/users/" + user.id} 
+          <DeleteConfirmModal
+            link={"/admin/users/" + user.id}
             content="Are you want to delete this user?"
             id="confirm-delete-user"
             afterSubmit={() => window.location = '/admin/users'}

@@ -7,10 +7,10 @@ class Admin::BaseController < ApplicationController
   def authenticate_user!
     if user_signed_in? && current_user.admin?
       super
-    else 
+    else
       redirect_to admin_login_path
     end
-  end 
+  end
 
   private
 

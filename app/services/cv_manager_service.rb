@@ -12,19 +12,14 @@ class CvManagerService
 
           SubForm.transaction do
             form["subforms"].each do |subform|
-              subform_db = form_db.sub_forms.create title: subform["title"],
+              form_db.sub_forms.create title: subform["title"],
                 time: subform["time"], content: subform["content"]
-              # raise ActiveRecord::Rollback
             end
           end
         end
       end
     end
 
-    if curriculum_vitae.save
-      curriculum_vitae
-    else
-      nil
-    end
+    curriculum_vitae if curriculum_vitae.save
   end
 end
