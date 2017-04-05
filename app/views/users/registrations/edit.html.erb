@@ -10,10 +10,10 @@
     <div class="form-group">
       <%= f.label :email, class: "control-label col-md-2" %>
       <div class="controls col-md-10">
-        <%= f.email_field :email, class: "form-control" %>
+        <%= f.email_field :email, class: "form-control", :disabled => true %>
         <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
           <p class="help-block">
-            Currently waiting confirmation for: <%= resource.unconfirmed_email %>
+            <%= t ".current" %> <%= resource.unconfirmed_email %>
           </p>
         <% end %>
       </div>

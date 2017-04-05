@@ -1,5 +1,7 @@
 <%= react_component "Header", user_signed_in: user_signed_in?,
-  edit_link: edit_user_registration_path,
+  change_password_link: edit_user_registration_path,
   logout_link: destroy_user_session_path,
   signup_link: new_user_registration_path,
-  login_link: new_user_session_path %>
+  login_link: new_user_session_path,
+  edit_profile_link: edit_profiles_path
+%>

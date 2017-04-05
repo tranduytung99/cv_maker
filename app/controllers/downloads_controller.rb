@@ -3,18 +3,15 @@ class DownloadsController < ApplicationController
 
   def show
     respond_to do |format|
-      format.pdf {send_cv_pdf}
-
-      if Rails.env.development?
-        format.html {render_sample_html}
-      end
+      format.pdf{send_cv_pdf}
+      format.html{render_sample_html} if Rails.env.development?
     end
   end
 
   private
 
   def load_data
-    @cv = CurriculumVitae.find_by id: params[:cv_id]
+    @cv = CurriculumVitae.find_by! id: params[:curriculum_vitae_id]
     @template = @cv.template
     @forms = @cv.forms
   end
@@ -25,7 +22,7 @@ class DownloadsController < ApplicationController
   end
 
   def create_cv_pdf
-    CVPdf.new load_user
+    CvPdfService.new @user
   end
 
   def send_cv_pdf
@@ -37,5 +34,4 @@ class DownloadsController < ApplicationController
     render template: "downloads/show", layout: "cv_pdf",
       locals: {user: @user}
   end
-
 end

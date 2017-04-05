@@ -250,7 +250,7 @@ class CVTemplate extends React.Component{
         form_infos: form_infos
       },
       success: (data) => {
-        window.location = this.props.downloadPDFPath + "?cv_id=" +data.id
+        window.location = "/curriculum_vitaes/" +data.id+"/downloads.pdf"
       },
       error: (xhr, status, err) => {
         alert("Error: " + err)

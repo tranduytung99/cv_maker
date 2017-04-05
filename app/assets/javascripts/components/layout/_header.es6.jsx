@@ -8,8 +8,8 @@ class Header extends React.Component{
         {id: 1, name: "Home", link: "/"},
         {id: 2, name: "Help", link: "/help"},
         {id: 3, name: "About", link: "/about"},
-        {id: 4, name: "Edit profile", link: this.props.edit_link},
-        {id: 5, name: "Log out", link: this.props.logout_link, sign_out: true}]
+        {id: 4, name: "Account", account: true}
+        ]
     } else {
       links = [
         {id: 1, name: "Home", link: "/"},
@@ -20,13 +20,29 @@ class Header extends React.Component{
     }
 
     let listLinks = links.map((link) => {
-      if (link.sign_out) {
+      if (link.account){
         return (
-          <li key={"link_" + link.id} >
-            <a href={link.link} data-method="delete" > {link.name} </a>
+          <li className= "dropdown">
+            <a href="#" className="dropdown-toggle" data-toggle="dropdown">
+              <i className="fa fa-user"></i> {link.name}
+              <b className="caret"></b>
+            </a>
+            <ul className="dropdown-menu">
+              <li>
+                <a href={this.props.change_password_link}><i className="fa fa-key"></i> Change Password</a>
+              </li>
+              <li>
+                <a href={this.props.edit_profile_link}><i className="fa fa-user"></i> Profile</a>
+              </li>
+              <li className="divider"></li>
+              <li>
+                <a href={this.props.logout_link} data-method="delete"><i className="fa fa-fw fa-power-off"></i> Sign out</a>
+              </li>
+            </ul>
           </li>
         )
-      } else {
+      }
+      else {
         return (
           <li key={"link_" + link.id} >
             <a href={link.link}> {link.name} </a>

@@ -42,8 +42,8 @@ h1:not(.in-pdf) {
   text-align: center;
 }
 
-h1.in-pdf {
-  font-weight:bold;
+.in-pdf {
+  font-weight: bold;
 }
 
 h2 {
@@ -102,46 +102,48 @@ footer {
 }
 
 .cv-main {
-  margin: 0px auto;
-  width: 210mm;
   background-color: white-color;
+  margin: 0 auto;
+  width: 210mm;
 
   .user-image {
     margin-top: 20px;
   }
 
   .form-info:hover {
-    border-width: 0.5px;
+    border-color: $dusty-gray-color;
     border-style: solid;
-    border-color: #999;
+    border-width: .5px;
+
     >.tool-box {
       visibility: visible;
     }
   }
 
   .form-info {
+
     >.tool-box {
       visibility: hidden;
     }
   }
 
-  [contenteditable=true]:empty:before {
+  [contenteditable=true]:empty::before {
+    color: $dusty-gray-color;
     content: attr(placeholder);
     display: block;
-    color: #999;
     text-align: left;
   }
 
   .contact-name {
-    margin-bottom: 10px;
     font-size: 35px;
-    font-weight:bold;
+    font-weight: bold;
+    margin-bottom: 10px;
     text-transform: capitalize;
   }
 
   .contact-title {
+    font-weight: bold;
     text-align: right;
-    font-weight: bold
   }
 
   .contact-content,
@@ -153,31 +155,31 @@ footer {
   .form-title {
     margin-top: 18px;
 
-    .input-text{
+    .input-text {
       font-weight: bold;
-      text-transform: uppercase
+      text-transform: uppercase;
     }
 
     hr {
+      border-color: $black-color;
+      border-style: inset;
       display: block;
-      margin-top: 4px;
       margin-bottom: 4px;
       margin-left: auto;
       margin-right: auto;
-      border-style: inset;
-      border-color: black;
+      margin-top: 4px;
     }
   }
 
   .subform:hover {
+    border-color: $dusty-gray-color;
     border-style: solid;
-    border-color: #999;
     border-width: 1px;
 
     [contenteditable=true] {
+      border-color: $dusty-gray-color;
       border-style: dashed;
-      border-width: 0.5px;
-      border-color: #999;
+      border-width: .5px;
     }
 
     .tool-box {
@@ -193,10 +195,11 @@ footer {
 
     .title-content {
       .input-text {
+        font-weight: normal;
         margin-bottom: 4px;
         text-transform: none;
-        font-weight: normal;
-        .title{
+
+        .title {
           font-weight: bold;
         }
       }
@@ -205,19 +208,23 @@ footer {
 }
 
 .template-div {
+  border: 1px solid $alto-color;
+  border-radius: 5px;
   margin-left: 40px;
   margin-right: 40px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
+
   >.row {
     margin-left: 0;
     margin-right: 0;
     width: 100%;
-    >img{
+
+    >img {
       height: 300px;
     }
   }
-  &:hover, &:focus {
-    opacity: 0.7;
+
+  &:hover,
+  &:focus {
+    opacity: .7;
   }
 }

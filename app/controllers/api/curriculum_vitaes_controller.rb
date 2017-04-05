@@ -3,7 +3,7 @@ module Api
     def create
       cv_template = params[:cv_template]
       form_infos = JSON.parse params[:form_infos]
-      curriculum_vitae = CvManagerService.new().create_new_cv current_user,
+      curriculum_vitae = CvManagerService.new.create_new_cv current_user,
         cv_template, form_infos
       if curriculum_vitae
         render json: {id: curriculum_vitae.id}
