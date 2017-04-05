@@ -6,11 +6,12 @@ class Admin::SessionsController < Admin::BaseController
   end
 
   def create
-    @user = User.find_by email: params[:user][:email]
-    if @user && @user.valid_password?(params[:user][:password]) 
+    user_param = params[:user]
+    @user = User.find_by email: user_param[:email]
+    if @user && @user.valid_password?(user_param[:password])
       if @user.admin?
         sign_in @user
-        render :js => "window.location = '/admin'"
+        render js: "window.location = '/admin'"
       else
         render json: {message: "Need admin account"}
       end
@@ -21,6 +22,6 @@ class Admin::SessionsController < Admin::BaseController
 
   def destroy
     sign_out
-    render :js => "window.location = '/admin/login'"
+    render js: "window.location = '/admin/login'"
   end
 end

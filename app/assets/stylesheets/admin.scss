@@ -4,15 +4,17 @@
 @import 'config/settings';
 
 body {
-  margin-top: 100px;
   background-color: $white-color;
+  margin-top: 100px;
+
   @media (min-width: 768px) {
     margin-top: 50px;
   }
 }
 
-#wrapper {
+.wrapper {
   padding-left: 0;
+
   @media (min-width: 768px) {
     padding-left: 225px;
   }
@@ -20,102 +22,112 @@ body {
 
 .navbar-brand.admin-brand {
   color: $white-color;
-  text-transform: uppercase;
   font-weight: 900;
+  text-transform: uppercase;
 }
 
-@mixin top_nav_li {
+@mixin top-nav-li {
   display: inline-block;
   float: left;
+
   >a {
-    &:hover, &:focus {
-      color: $white-color;
+    &:hover,
+    &:focus {
       background-color: $black-color;
+      color: $white-color;
     }
   }
 }
 
 .top-nav {
   padding: 0 15px;
+
   >li {
-    @include top_nav_li;
+    @include top-nav-li;
     >a {
-      padding-top: 15px;
-      padding-bottom: 15px;
-      line-height: 20px;
       color: $grey-color;
+      line-height: 20px;
+      padding-bottom: 15px;
+      padding-top: 15px;
     }
   }
+
   .open {
-    @include top_nav_li;
+    @include top-nav-li;
     >a {
-      color: $white-color;
       background-color: $black-color;
+      color: $white-color;
     }
+
     >.dropdown-menu {
-      float: left;
-      margin-top: 0;
-      border: 1px solid rgba(0, 0, 0, .15);
+      background-color: $white-color;
+      border: 1px solid $border-color;
       border-top-left-radius: 0;
       border-top-right-radius: 0;
-      background-color: $white-color;
-      box-shadow: 0 6px 12px rgba(0,0,0,.175);
-      -webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175);
+      box-shadow: 0 6px 12px $shadow-color;
+      float: left;
+      margin-top: 0;
     }
   }
 }
 
-ul.alert-dropdown {
+.alert-dropdown {
   width: 200px;
 }
 
 
 .side-nav {
   @media (min-width: 768px) {
+    background-color: $mine-shaft-color;
+    border: 0;
+    border-radius: 0;
+    bottom: 0;
+    left: 225px;
+    margin-left: -225px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding-bottom: 40px;
     position: fixed;
     top: 51px;
-    left: 225px;
     width: 225px;
-    margin-left: -225px;
-    border: none;
-    border-radius: 0;
-    overflow-y: auto;
-    background-color: $mine-shaft-color;
-    bottom: 0;
-    overflow-x: hidden;
-    padding-bottom: 40px;
+
     >li>a {
       width: 225px;
     }
   }
 }
 
-#page-wrapper {
-  width: 100%;
-  padding: 0;
+.page-wrapper {
   background-color: $white-color;
+  padding: 0;
+  width: 100%;
+
   @media (min-width: 768px) {
     padding: 10px;
   }
 }
 
-@mixin panel_color($color, $bold-color, $inverse-color: $white-color) {
+@mixin panel-color($color, $bold-color, $inverse-color: $white-color) {
   border-color: $color;
+
   .panel-heading {
+    background-color: $color;
     border-color: $color;
     color: $inverse-color;
-    background-color: $color;
   }
+
   a {
     color: $color;
-    &:hover, &:focus {
-      color: $bold-color
+
+    &:hover,
+    &:focus {
+      color: $bold-color;
     }
   }
 }
 
 .panel-black {
-  @include panel_color($inverse-color, $black-color);
+  @include panel-color($inverse-color, $black-color);
 }
 
 .huge {
@@ -124,42 +136,42 @@ ul.alert-dropdown {
 }
 
 .form-horizontal .form-group div {
-  padding-right: 0px;
+  padding-right: 0;
+
   &:last-of-type {
     padding-right: 15px;
   }
 }
 
-@mixin inverse_item {
+@mixin inverse-item {
   color: $white-color;
   background-color: $inverse-color;
   border-color: $inverse-color;
 }
 
 .btn-default.btn-inverse {
-  @include inverse_item;
-  &:hover, &:focus {
+  @include inverse-item;
+  &:hover,
+  &:focus {
     background-color: $black-color;
     color: $white-color;
   }
 }
 
 .input-group-addon.addon-inverse {
-  @include inverse_item;
+  @include inverse-item;
 }
 
-.form-group.required .control-label:after {
+.form-group.required .control-label::after {
+  color: $red-color;
   content: '*';
-  color: red;
 }
 
-img#user-avatar {
-  width: 100px;
-  height: 100px;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
+.user-avatar {
+  border: 5px solid $bold-border;
   border-radius: 50%;
-  border: 5px solid rgba(0,0,30,0.8);
+  height: 100px;
+  width: 100px;
 }
 
 .no-top-margin {
@@ -177,7 +189,7 @@ img#user-avatar {
 }
 
 .help-block.with-errors {
-  color: red;
+  color: $red-color;
 }
 
 .full-width {

@@ -122,6 +122,12 @@ en:
         title: "New user"
       edit:
         title: "Edit users"
+    templates:
+      index:
+        title: "Manage templates"
+        add_new: "Add new"
+      new:
+        title: New template
     static_pages:
       header: "Dashboard"
       index:

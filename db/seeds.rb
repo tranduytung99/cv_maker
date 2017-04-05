@@ -27,9 +27,11 @@ CatalogueForm.create name: "References", hint_title: "", hint_content: ""
 Template.create name: "Template 1", content: "template1"
 Template.create name: "Template 2", content: "template2"
 
-User.create(first_name: "Vinh", last_name: "Nguyen Quang", date_of_birth: "22/10/1994", sex: "male", phone_number: "0978135401", email: "vinh@framgia.com", address: "Hoang Quoc Viet", website: "vinh.fb.com", password: "123456")
-User.create first_name: "Nguyen", last_name: "Thanh", date_of_birth: "13/3/2003",
-  phone_number: "0123498372", sex: "male", email: "thanh@framgia.com",
-  password: "000000", password_confirmation: "000000"
+User.create(first_name: "Vinh", last_name: "Nguyen Quang", date_of_birth: "22/10/1994", sex: "Male",
+  phone_number: "0978135401", email: "vinh@framgia.com", address: "Hoang Quoc Viet", website: "vinh.fb.com", password: "123456")
+User.create first_name: "thanh", last_name: "nguyen van", date_of_birth: "13/3/1995",
+  phone_number: "0123498372", sex: "Other", email: "thanh@framgia.com",
+  password: "000000", password_confirmation: "000000", address: "Ngo 190, Hoang Quoc Viet, Ha Noi",
+  website: "facebook.com/thanh130395"
 User.create email: "admin@cv.framgia.vn", first_name: "Admin", last_name: "Nguyen",
   phone_number: "0987654321", password: "admin0", password_confirmation: "admin0", role: "admin"

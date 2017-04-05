@@ -1,0 +1,15 @@
+<% provide :title, t(".title") %>
+<% content_for :breadcrumb do %>
+  <ol class="breadcrumb">
+    <li>
+      <i class="fa fa-files-o"></i>
+      <%= link_to t(".templates"), admin_templates_path %>
+    </li>
+    <li class="active">
+      <i class="fa fa-plus-square"></i>
+      <%= t ".add" %>
+    </li>
+    <%= render "back" %>
+  </ol>
+<% end %>
+<%= react_component "AdminNewTemplate", template: @template %>
