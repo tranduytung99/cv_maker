@@ -3,54 +3,54 @@
     <div class="contact-info">
       <div class="col-xs-8">
         <div class="col-xs-12 contact-name">
-          <h1 class="in-pdf"><%= @user.last_name %> <%= @user.first_name %></h1>
+          <h1 class="in-pdf"><%= user.last_name %> <%= user.first_name %></h1>
         </div>
         <div class="row">
           <div class="col-xs-3 contact-title">
-            <span> Date of birth </span>
+            <span> <%= t ".date_of_birth" %> </span>
           </div>
           <div class="contact-content col-xs-9">
-            <span><%= @user.date_of_birth %></span>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-xs-3 contact-title">
-            <span> Gender </span>
-          </div>
-          <div class="contact-content col-xs-9">
-            <span><%= @user.sex %></span>
+            <span><%= user.date_of_birth %></span>
           </div>
         </div>
         <div class="row">
           <div class="col-xs-3 contact-title">
-            <span> Phone </span>
+            <span> <%= t ".gender" %> </span>
           </div>
           <div class="contact-content col-xs-9">
-            <span><%= @user.phone_number %></span>
+            <span><%= user.sex %></span>
           </div>
         </div>
         <div class="row">
           <div class="col-xs-3 contact-title">
-            <span> Email </span>
+            <span> <%= t ".phone" %> </span>
           </div>
           <div class="contact-content col-xs-9">
-            <span><%= @user.email %></span>
+            <span><%= user.phone_number %></span>
           </div>
         </div>
         <div class="row">
           <div class="col-xs-3 contact-title">
-            <span> Address </span>
+            <span> <%= t ".email" %> </span>
           </div>
           <div class="contact-content col-xs-9">
-            <span><%= @user.address %></span>
+            <span><%= user.email %></span>
           </div>
         </div>
         <div class="row">
           <div class="col-xs-3 contact-title">
-            <span> Website </span>
+            <span> <%= t ".address" %> </span>
           </div>
           <div class="contact-content col-xs-9">
-            <span><%= @user.website %></span>
+            <span><%= user.address %></span>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-3 contact-title">
+            <span> <%= t ".website" %> </span>
+          </div>
+          <div class="contact-content col-xs-9">
+            <span><%= user.website %></span>
           </div>
         </div>
       </div>
@@ -60,11 +60,11 @@
       </div>
     </div>
     <div class="form-info">
-      <% @forms.each do |form| %>
+      <% forms.each do |form| %>
         <div class="form-info col-xs-12">
           <div class="col-xs-12 form-title">
             <div class="input-text">
-              <%= form.catalogue_form.name %>
+              <%= form.catalogue_form_name %>
             </div>
             <hr/>
           </div>

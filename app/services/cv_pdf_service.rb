@@ -1,6 +1,6 @@
 require "render_anywhere"
 
-class CVPdf
+class CvPdfService
   include RenderAnywhere
 
   def initialize user
@@ -8,7 +8,7 @@ class CVPdf
   end
 
   def to_pdf
-    kit = PDFKit.new(as_html, page_size: 'A4')
+    kit = PDFKit.new(as_html, page_size: "A4")
     kit.to_file("#{Rails.root}/public/cv.pdf")
   end
 

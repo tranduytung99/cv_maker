@@ -5,9 +5,11 @@ Rails.application.routes.draw do
   get "/contact", to: "static_pages#contact"
   get "/about", to: "static_pages#about"
 
-  resources :users do
-    resource :download, only: [:show]
+  resources :curriculum_vitaes, only: :show do
+    resource :downloads, only: :show
   end
+
+  resource :profiles, only: [:edit, :update]
 
   namespace :admin do
     root "static_pages#index"
@@ -20,9 +22,9 @@ Rails.application.routes.draw do
 
   namespace :api do
     resources :templates, only: :index
-    resources :users do
+    resources :users, only: :show do
       resources :curriculum_vitaes, only: :create
     end
-    resources :catalogue_forms
+    resources :catalogue_forms, only: :index
   end
 end

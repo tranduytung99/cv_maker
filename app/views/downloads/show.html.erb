@@ -1,1 +1,1 @@
-<%= render "cv_templates/#{@template.content}" %>
+<%= render partial: "cv_templates/#{@template.content}", locals: {user: @user, forms: @forms} %>

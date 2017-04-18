@@ -46,12 +46,13 @@ en:
         submit: "Sign up"
         login: "Login if have account"
       edit:
-        title: "Edit User"
+        title: "Change Password"
         submit: Update
         pwd_minimum: " characters minimum"
         cancel_account: "Cancel my account"
         confirm_msg: "Are you sure?"
         new_pwd: "New password"
+        current: "Currently waiting confirmation for:"
     sessions:
       new:
         title: "Login"
@@ -75,6 +76,19 @@ en:
       new:
         title: "Resend unlock instructions"
         submit: "Resend unlock instructions"
+  profiles:
+      edit:
+        title: "Edit Profile"
+        back: "Back"
+        submit: "Submit"
+  cv_templates:
+    _templates2:
+      date_of_birth: "Date of birth"
+      gender: "Gender"
+      phone: "Phone"
+      email: "Email"
+      address: "Address"
+      website: "Website"
   layouts:
     application:
       title: "CV Maker"

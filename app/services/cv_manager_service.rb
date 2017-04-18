@@ -9,17 +9,22 @@ class CvManagerService
         form_infos.each do |form|
           form_db = curriculum_vitae.forms.create position: form["position"],
             catalogue_form_id: form["catalogue_form_id"]
-
-          SubForm.transaction do
-            form["subforms"].each do |subform|
-              form_db.sub_forms.create title: subform["title"],
-                time: subform["time"], content: subform["content"]
-            end
-          end
+          create_sub_form form, form_db
         end
       end
     end
 
     curriculum_vitae if curriculum_vitae.save
+  end
+
+  private
+
+  def create_sub_form form, form_db
+    SubForm.transaction do
+      form["subforms"].each do |subform|
+        form_db.sub_forms.create title: subform["title"],
+          time: subform["time"], content: subform["content"]
+      end
+    end
   end
 end
