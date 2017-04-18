@@ -39,6 +39,7 @@ en:
         title: "Forgot your password?"
         submit: "Send me reset password instructions"
         sign_up: "Sign up new account"
+        login_facebook: "Login Facbook"
     registrations:
       new:
         title: "Sign up"

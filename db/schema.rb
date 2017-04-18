@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170320031430) do
+ActiveRecord::Schema.define(version: 20170418012900) do
 
   create_table "catalogue_forms", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name"
@@ -61,12 +61,22 @@ ActiveRecord::Schema.define(version: 20170320031430) do
     t.index ["form_id"], name: "index_sub_forms_on_form_id"
   end
 
+  create_table "tem_forms", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.bigint "catalogue_form_id"
+    t.bigint "template_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["catalogue_form_id"], name: "index_tem_forms_on_catalogue_form_id"
+    t.index ["template_id"], name: "index_tem_forms_on_template_id"
+  end
+
   create_table "templates", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name"
     t.string "content"
     t.string "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "tpclass", limit: 10
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -92,6 +102,10 @@ ActiveRecord::Schema.define(version: 20170320031430) do
     t.string "last_sign_in_ip"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "oauth_token"
+    t.datetime "oauth_expires_at"
+    t.string "provider"
+    t.string "uid"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
@@ -101,4 +115,6 @@ ActiveRecord::Schema.define(version: 20170320031430) do
   add_foreign_key "forms", "catalogue_forms"
   add_foreign_key "forms", "curriculum_vitaes"
   add_foreign_key "sub_forms", "forms"
+  add_foreign_key "tem_forms", "catalogue_forms"
+  add_foreign_key "tem_forms", "templates"
 end

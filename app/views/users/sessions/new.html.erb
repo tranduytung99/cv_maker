@@ -50,3 +50,6 @@
 
   <% end %>
 <% end %>
+<% unless current_user  %>
+  <%= link_to t("login_facebook") , user_facebook_omniauth_authorize_path %>
+<% end %>
